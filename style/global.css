@@ -52,3 +52,7 @@ body{
     color:var(--text-body);
     overflow: hidden;
 }
+
+h1,h2,h3{
+    color: var(--text-heading);
+}
