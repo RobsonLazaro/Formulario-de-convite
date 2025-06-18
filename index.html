@@ -11,21 +11,63 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Leckerli+One&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
-    
+
 </head>
 
 <body>
     <div id="app">
         <aside>
-            <img src="assets/icons/Logo.svg" alt="Icon da logo Festivite">
-            <div>
-                <h1>Festivite</h1>
-                <p>Crie um convite digital para o seu evento</p>
+            <div id="info-produto">
+                <div id="logo">
+                    <img src="assets/icons/Logo.svg" alt="Icon da logo Festivite">
+                </div>
+                <div id="logo-slogan">
+                    <h1>Festivite</h1>
+                    <p>Crie um convite digital para o seu evento</p>
+                </div>
             </div>
+
         </aside>
 
         <main>
-            <h2>Crie seu convite</h2>
+            <div class="container">
+                <div>
+                    <h2>Crie seu convite</h2>
+                </div>
+                <form method="POST">
+                    <fieldset id="event">
+                        <div>
+                            <img src="assets/icons/calendar.svg" alt="Ícone de calendario">
+                            <legend>Sobre o Evento</legend>
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="title">Título</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="initial-date">Início</label>
+                            <input type="text" name="initial-date" id="initial-date">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="final-date">Fim</label>
+                            <input type="text" name="title" id="title">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="type">Tipo</label>
+                            <input type="text" name="type" id="type">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="local">Local</label>
+                            <input type="text" name="local" id="local">
+                        </div>
+                        <div class="input-wrapper">
+                            <label for="description">Descrição</label>
+                            <input type="text" name="description" id="description">
+                        </div>
+                    </fieldset>
+                </form>
+
+            </div>
         </main>
     </div>
 
