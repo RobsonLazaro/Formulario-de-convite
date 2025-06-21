@@ -1,13 +1,104 @@
-fieldset{
+fieldset {
     border: none;
 }
 
-legend{
+legend {
     font: var(--heading-sm);
-    color:var(--text-heading);
+    color: var(--text-heading);
 }
 
-input, textarea, select{
+input,
+textarea {
+    font: var(--body-md);
+    color: var(--text-heading);
     appearance: none;
     width: 100%;
+    background-color: var(--input-base);
+    padding-inline: 1rem;
+    height: 3rem;
+    border-radius: .5rem;
+    border: 1px solid var(--input-stroke);
+    margin-top: .75rem;
+
+}
+
+input:focus,
+textarea:focus {
+    outline: .25rem solid var(--surface-secondary);
+    border-color:var(--brand-light);
+
+}
+
+textarea {
+    height: 8.5rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.radio-wrapper {
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    background-color: var(--input-base);
+    border-radius: .5rem;
+    border: 1px solid var(--input-stroke);
+    height: 3rem;
+    margin-top: .75rem;
+    padding: .25rem;
+
+    & .radio-inner {
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+        border-radius: .25rem;
+
+        & svg {
+            width: 1rem;
+        }
+
+        input[type="radio"] {
+            display: none;
+        }
+
+        input[type="radio"]:checked+label {
+            color: var(--text-heading);
+            font-weight: 500;
+
+        }
+
+        &:has(:checked) {
+            background-color: var(--shape-button);
+
+            & svg path {
+                fill: var(--brand-light);
+            }
+        }
+    }
+}
+
+#colors{
+    display: flex;
+    justify-content: space-between;
+    
+
+
+    & input{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+    }
+    
+    & .color{
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+    }
+    & #brand-light + div{
+        background-color: var(--brand-light);
+    }
 }

@@ -71,3 +71,32 @@ h2{
 h3{
     font:var(--heading-sm);
 }
+
+.flex{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+}
+
+fieldset > div{
+    padding-block: .5rem;
+}
+
+.flex > div{
+    flex:1
+}
+
+.legenda{
+    display: flex;
+    align-items: center;
+    gap:  .75rem;
+
+    & img{
+        width: 24px;
+    }
+}
+
+fieldset + fieldset{
+    padding-block: 48px;
+}
+
