@@ -47,14 +47,13 @@
 
                         <div class="flex">
 
-                            <div class="input-wrapper">
+                            <div class="datetime-wrapper">
                                 <label for="initial-date">Início</label>
-                                <input type="text" name="initial-date" id="initial-date"
-                                    placeholder="DD/MM/AAAA, --:--">
+                                <input type="datetime-local" name="initial-date" id="initial-date">
                             </div>
-                            <div class="input-wrapper">
+                            <div class="datetime-wrapper">
                                 <label for="final-date">Fim</label>
-                                <input type="text" name="final-date" id="final-date" placeholder="DD/MM/AAAA, --:--">
+                                <input type="datetime-local" name="final-date" id="final-date">
                             </div>
                         </div>
                         <div class="flex">
@@ -90,14 +89,24 @@
                             <div class="input-wrapper">
                                 <label for="local">Local</label>
                                 <input type="text" name="local" id="local" placeholder="Link ou endereço">
+                                
                             </div>
                         </div>
-
 
                         <div class="textarea-wrapper">
                             <label for="description">Descrição</label>
                             <textarea name="description" id="description"
-                                placeholder="Escreva sobre os detalhes do evento"></textarea>
+                                placeholder="Escreva sobre os detalhes do evento" minlength="12"></textarea>
+
+                            <div class="error">
+                                <svg width="17" height="16" viewBox="0 0 17 16" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd"
+                                        d="M8.50004 1.83337C5.09428 1.83337 2.33337 4.59428 2.33337 8.00004C2.33337 11.4058 5.09428 14.1667 8.50004 14.1667C11.9058 14.1667 14.6667 11.4058 14.6667 8.00004C14.6667 4.59428 11.9058 1.83337 8.50004 1.83337ZM1.33337 8.00004C1.33337 4.042 4.542 0.833374 8.50004 0.833374C12.4581 0.833374 15.6667 4.042 15.6667 8.00004C15.6667 11.9581 12.4581 15.1667 8.50004 15.1667C4.542 15.1667 1.33337 11.9581 1.33337 8.00004ZM8.50004 4.83337C8.77618 4.83337 9.00004 5.05723 9.00004 5.33337V8.00004C9.00004 8.27618 8.77618 8.50004 8.50004 8.50004C8.2239 8.50004 8.00004 8.27618 8.00004 8.00004V5.33337C8.00004 5.05723 8.2239 4.83337 8.50004 4.83337ZM8.00004 10.6667C8.00004 10.3906 8.2239 10.1667 8.50004 10.1667H8.50671C8.78285 10.1667 9.00671 10.3906 9.00671 10.6667C9.00671 10.9428 8.78285 11.1667 8.50671 11.1667H8.50004C8.2239 11.1667 8.00004 10.9428 8.00004 10.6667Z"
+                                        fill="#FF5959" />
+                                </svg>
+                                <span>Insira uma descrição para o evento</span>
+                            </div>
                         </div>
                     </fieldset>
 
@@ -107,46 +116,118 @@
                             <legend>Personalização</legend>
                         </div>
 
-                        <div>
-                            <p>Cor principal</p>
-                        </div>
+                        <section id="colors">
+                            <div class="label-checkbox">
+                                <label>Cor principal</label>
+                            </div>
+                            <div class="checkbox-colors">
+                                <input type="checkbox" id="color-brand-light">
+                                <label for="color-brand-light"" class=" circle-color brand-light"></label>
 
-                        <div id="colors">
-                            <div>
-                                <input type="checkbox" name="color" id="brand-light" >
-                                <div class="color"></div>
+                                <input type="checkbox" id="color-navy">
+                                <label for="color-navy" class="circle-color navy"></label>
+
+                                <input type="checkbox" id="color-purple">
+                                <label for="color-purple" class="circle-color purple"></label>
+
+                                <input type="checkbox" id="color-fuschia">
+                                <label for="color-fuschia" class="circle-color fuschia"></label>
+
+                                <input type="checkbox" id="color-pink">
+                                <label for="color-pink" class="circle-color pink"></label>
+
+                                <input type="checkbox" id="color-danger">
+                                <label for="color-danger" class="circle-color danger"></label>
+
+                                <input type="checkbox" id="color-orange">
+                                <label for="color-orange" class="circle-color orange"></label>
+
+                                <input type="checkbox" id="color-yellow">
+                                <label for="color-yellow" class="circle-color yellow"></label>
+
+                                <input type="checkbox" id="color-lime">
+                                <label for="color-lime" class="circle-color lime"></label>
+
+                                <input type="checkbox" id="color-green">
+                                <label for="color-green" class="circle-color green"></label>
+
+                                <input type="checkbox" id="color-cyan">
+                                <label for="color-cyan" class="circle-color cyan"></label>
                             </div>
-                            <div>
-                                <input type="checkbox" name="color" id="navy" class="color">
+
+                        </section>
+
+                        <section id="theme">
+                            <div class="label-checkbox">
+                                <label>Tema do evento</label>
                             </div>
-                            <div>
-                                <input type="checkbox" name="" id="purple" class="color">
+                            <div class="cards-themes">
+                                <div class="item-theme">
+                                    <img src="assets/img/Image.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="birth">
+                                    <label for="birth"> Aniversário</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-1.png" alt="Imagem de aniversário">
+
+                                    <input type="radio" name="theme" id="child">
+                                    <label for="child">Infantil</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-2.png" alt="Imagem de aniversário">
+
+                                    <input type="radio" name="theme" id="graduation">
+                                    <label for="graduation">Formatura</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-3.png" alt="Imagem de aniversário">
+
+                                    <input type="radio" name="theme" id="marriage">
+                                    <label for="marriage">Casamento</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-4.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="baby-shower">
+                                    <label for="baby-shower">Chá de bebê</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-5.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="bridal-shower">
+                                    <label for="bridal-shower">Chá de panela</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-6.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="carnival">
+                                    <label for="carnival">Carnaval</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-7.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="easter">
+                                    <label for="easter">Páscoa</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-8.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="saint-john">
+                                    <label for="saint-john">São João</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-9.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="halloween">
+                                    <label for="halloween">Halloween</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-10.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="christmas">
+                                    <label for="christmas">Natal</label>
+                                </div>
+                                <div class="item-theme">
+                                    <img src="assets/img/Image-11.png" alt="Imagem de aniversário">
+                                    <input type="radio" name="theme" id="other">
+                                    <label for="other">Outro</label>
+                                </div>
                             </div>
-                            <div>
-                                <input type="checkbox" name="" id="fuschia" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="pink" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="danger" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="orange" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="yellow" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="lime" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="green" class="color">
-                            </div>
-                            <div>
-                                <input type="checkbox" name="" id="cyan" class="color">
-                            </div>
-                        </div>
+
+                        </section>
                     </fieldset>
                 </form>
 

@@ -7,6 +7,18 @@ legend {
     color: var(--text-heading);
 }
 
+.error {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+
+        font: var(--text-sm);
+        color: var(--danger);
+
+        margin-top: .25rem;
+    }
+
+
 input,
 textarea {
     font: var(--body-md);
@@ -20,12 +32,39 @@ textarea {
     border: 1px solid var(--input-stroke);
     margin-top: .75rem;
 
+
+    & input[type="datetime-local"]{
+        text-transform: uppercase;
+    }
+
+    
+    &+small {
+        font: var(--text-sm);
+        color: #78716C;
+        display: inline-block;
+        margin-top: .25rem;
+    }
+
+    &[required]+.error {
+        display: flex;
+        align-items: center;
+        gap: .25rem;
+
+        font: var(--text-sm);
+        color: var(--danger);
+
+        margin-top: .25rem;
+    }
+
+    &:not(:focus):valid +.error {
+        display: none;
+    }
 }
 
 input:focus,
 textarea:focus {
     outline: .25rem solid var(--surface-secondary);
-    border-color:var(--brand-light);
+    border-color: var(--brand-light);
 
 }
 
@@ -47,6 +86,7 @@ textarea {
     padding: .25rem;
 
     & .radio-inner {
+        position: relative;
         justify-content: center;
         display: flex;
         align-items: center;
@@ -59,7 +99,11 @@ textarea {
         }
 
         input[type="radio"] {
-            display: none;
+            all: unset;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
         }
 
         input[type="radio"]:checked+label {
@@ -78,27 +122,159 @@ textarea {
     }
 }
 
-#colors{
+.label-checkbox {
+    margin-bottom: .5rem;
+}
+
+#colors {
     display: flex;
-    justify-content: space-between;
-    
+    flex-direction: column;
 
-
-    & input{
+    & .checkbox-colors {
         display: flex;
-        align-items: center;
-        justify-content: center;
+        justify-content: space-between;
+    }
+
+    & input {
         width: 40px;
         height: 40px;
         border-radius: 50%;
+        margin: 0;
+        padding: 0;
+
+
     }
-    
-    & .color{
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    & input[type="checkbox"]:checked+.circle-color {
+        outline: 2px solid var(--brand-light);
+        outline-offset: 0.2px;
+    }
+
+    & .circle-color {
+        position: relative;
+        display: flex;
+        background-color: var(--shape-button);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--shape-hover);
+        }
+    }
+
+    & .circle-color::before {
+        content: '';
+        display: block;
         height: 24px;
         width: 24px;
         border-radius: 50%;
+        background-color: currentColor;
+
     }
-    & #brand-light + div{
-        background-color: var(--brand-light);
+
+    /* Paleta de cores */
+    .brand-light {
+        color: var(--brand-light);
+    }
+
+    .navy {
+        color: var(--navy);
+    }
+
+    .purple {
+        color: var(--purple);
+    }
+
+    .fuschia {
+        color: var(--fuschia);
+    }
+
+    .pink {
+        color: var(--pink);
+    }
+
+    .danger {
+        color: var(--danger);
+    }
+
+    .orange {
+        color: var(--orange);
+    }
+
+    .yellow {
+        color: var(--yellow);
+    }
+
+    .lime {
+        color: var(--lime);
+    }
+
+    .green {
+        color: var(--green);
+    }
+
+    .cyan {
+        color: var(--cyan);
+    }
+
+}
+
+#theme {
+    position: relative;
+
+    & [type="radio"] {
+        all: unset;
+        inset: 0;
+    }
+
+    & .cards-themes {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: .5rem;
+
+        & .item-theme {
+            position: relative;
+            height: 103px;
+            padding: .25rem .25rem .5rem .25rem;
+            border: 1px solid var(--input-stroke);
+            background-color: var(--shape-button);
+            border-radius: .5rem;
+
+            & [type="radio"] {
+                all: unset;
+                position: absolute;
+                inset: 0;
+                opacity: 0;
+            }
+
+            & label {
+                display: block;
+                text-align: center;
+                color: var(--text-heading);
+            }
+
+            img {
+                max-width: 100%;
+                border-radius: 4px;
+
+                margin-bottom: .5rem;
+            }
+
+            &:has(input:checked) {
+                border: 2px solid var(--brand-light);
+            }
+
+            &:hover {
+                background-color: var(--shape-hover);
+            }
+        }
     }
 }

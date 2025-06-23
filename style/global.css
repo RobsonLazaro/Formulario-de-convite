@@ -89,8 +89,7 @@ fieldset > div{
 .legenda{
     display: flex;
     align-items: center;
-    gap:  .75rem;
-
+    gap: .75rem;
     & img{
         width: 24px;
     }

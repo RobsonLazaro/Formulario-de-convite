@@ -9,6 +9,7 @@ body {
     background-color: var(--shape-background);
     padding: 1.25rem;
     border-radius: 1rem;
+
 }
 
 aside {
@@ -38,11 +39,17 @@ aside {
 main {
     height: 720px;
     width: 820px;
-    border-radius: .75rem;
+    border-radius: .75rem .75rem 0 0;
     background-color: var(--shape-body);
     flex: 1;
     display: flex;
     overflow: auto;
+    scrollbar-color: var(--input-stroke) var(--shape-body); 
+
+}
+
+section + section {
+    padding-block: 1.75rem ;
 }
 
 .container {
@@ -52,5 +59,16 @@ main {
     justify-content: flex-start;
 }
 
+/* Fundo da scrollbar (trilho) */
+::-webkit-scrollbar-track {
+  background: var(--shape-body); /* fundo escuro */
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: var(--input-stroke); /* cor da barra */
+  border-radius: 4px;
+}
 
+::-webkit-calendar-picker-indicator{
+    visibility: hidden
+}
