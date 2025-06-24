@@ -1,0 +1,26 @@
+#file-input{
+    position: absolute;
+    opacity: 0;
+    padding: 0;
+    margin: 0;
+    font: var(--body-md);
+    top: 0;
+
+}
+
+.input-file-wrapper{
+    position: relative;
+    margin-top: 1rem;
+}
+
+.cover-photo{
+    width: 119px;
+    display: flex;
+    align-items: center;
+    padding-inline: .75rem;
+    padding-block: .25rem;
+    gap: .5rem;
+    border-radius: .5rem;
+    background-color: var(--shape-button);
+    font-weight: 500;
+}

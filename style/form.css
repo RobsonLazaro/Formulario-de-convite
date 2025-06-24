@@ -1,5 +1,11 @@
+@import url(fields/index.css);
+
 fieldset {
     border: none;
+}
+
+#titulo-convite {
+    padding-bottom: 2.5rem;
 }
 
 legend {
@@ -8,16 +14,15 @@ legend {
 }
 
 .error {
-        display: flex;
-        align-items: center;
-        gap: .25rem;
+    display: flex;
+    align-items: center;
+    gap: .25rem;
 
-        font: var(--text-sm);
-        color: var(--danger);
+    font: var(--text-sm);
+    color: var(--danger);
 
-        margin-top: .25rem;
-    }
-
+    margin-top: .25rem;
+}
 
 input,
 textarea {
@@ -32,12 +37,6 @@ textarea {
     border: 1px solid var(--input-stroke);
     margin-top: .75rem;
 
-
-    & input[type="datetime-local"]{
-        text-transform: uppercase;
-    }
-
-    
     &+small {
         font: var(--text-sm);
         color: #78716C;
@@ -56,7 +55,7 @@ textarea {
         margin-top: .25rem;
     }
 
-    &:not(:focus):valid +.error {
+    &:not(:focus):valid+.error {
         display: none;
     }
 }
@@ -71,6 +70,12 @@ textarea:focus {
 textarea {
     height: 8.5rem;
     padding: 1rem;
+}
+
+#event {
+    & .flex>div {
+        flex: 1
+    }
 }
 
 .radio-wrapper {
@@ -92,6 +97,7 @@ textarea {
         gap: .5rem;
         width: 100%;
         border-radius: .25rem;
+        transition: transform 0.5s;
 
         & svg {
             width: 1rem;
@@ -126,7 +132,7 @@ textarea {
 }
 
 #colors {
-    display: ;
+    display: flex;
     flex-direction: column;
 
     & .checkbox-colors {
