@@ -55,7 +55,7 @@ section {
 .container {
     width: 70%;
     margin-inline: auto;
-    padding-block: 5rem;
+    padding-top: 5rem;
     justify-content: flex-start;
 }
 

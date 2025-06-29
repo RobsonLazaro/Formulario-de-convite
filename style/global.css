@@ -102,3 +102,7 @@ fieldset{
     flex: 2;
 }
 
+form{
+    padding-bottom: 5rem;
+
+}
