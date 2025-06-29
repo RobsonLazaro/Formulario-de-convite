@@ -1,0 +1,98 @@
+#colors {
+    display: flex;
+    flex-direction: column;
+
+    & .checkbox-colors {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    & input {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0;
+        padding: 0;
+    }
+
+    input[type="checkbox"] {
+        display: none;
+    }
+
+    & input[type="checkbox"]:checked+.circle-color {
+        outline: 2px solid var(--brand-light);
+        outline-offset: 0.2px;
+    }
+
+    & .circle-color {
+        position: relative;
+        display: flex;
+        background-color: var(--shape-button);
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: var(--shape-hover);
+        }
+    }
+
+    & .circle-color::before {
+        content: '';
+        display: block;
+        height: 24px;
+        width: 24px;
+        border-radius: 50%;
+        background-color: currentColor;
+
+    }
+
+    /* Paleta de cores */
+    .brand-light {
+        color: var(--brand-light);
+    }
+
+    .navy {
+        color: var(--navy);
+    }
+
+    .purple {
+        color: var(--purple);
+    }
+
+    .fuschia {
+        color: var(--fuschia);
+    }
+
+    .pink {
+        color: var(--pink);
+    }
+
+    .danger {
+        color: var(--danger);
+    }
+
+    .orange {
+        color: var(--orange);
+    }
+
+    .yellow {
+        color: var(--yellow);
+    }
+
+    .lime {
+        color: var(--lime);
+    }
+
+    .green {
+        color: var(--green);
+    }
+
+    .cyan {
+        color: var(--cyan);
+    }
+
+}

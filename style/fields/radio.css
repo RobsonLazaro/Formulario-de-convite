@@ -1,0 +1,48 @@
+.radio-wrapper {
+    display: flex;
+    gap: .5rem;
+    width: 100%;
+    background-color: var(--input-base);
+    border-radius: .5rem;
+    border: 1px solid var(--input-stroke);
+    height: 3rem;
+    margin-top: .75rem;
+    padding: .25rem;
+
+    & .radio-inner {
+        position: relative;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+        width: 100%;
+        border-radius: .25rem;
+        transition: transform 0.5s;
+
+        & svg {
+            width: 1rem;
+        }
+
+        input[type="radio"] {
+            all: unset;
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        input[type="radio"]:checked+label {
+            color: var(--text-heading);
+            font-weight: 500;
+
+        }
+
+        &:has(:checked) {
+            background-color: var(--shape-button);
+
+            & svg path {
+                fill: var(--brand-light);
+            }
+        }
+    }
+}

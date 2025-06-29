@@ -48,8 +48,8 @@ main {
 
 }
 
-section + section {
-    padding-block: 1.75rem ;
+section {
+    padding-top: 1.5rem ;
 }
 
 .container {

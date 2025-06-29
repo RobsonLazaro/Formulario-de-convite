@@ -24,7 +24,10 @@ legend {
     margin-top: .25rem;
 }
 
-input,
+input[type=text],
+input[type=email],
+input[type=datetime-local],
+input[type=tel],
 textarea {
     font: var(--body-md);
     color: var(--text-heading);
@@ -78,159 +81,10 @@ textarea {
     }
 }
 
-.radio-wrapper {
-    display: flex;
-    gap: .5rem;
-    width: 100%;
-    background-color: var(--input-base);
-    border-radius: .5rem;
-    border: 1px solid var(--input-stroke);
-    height: 3rem;
-    margin-top: .75rem;
-    padding: .25rem;
-
-    & .radio-inner {
-        position: relative;
-        justify-content: center;
-        display: flex;
-        align-items: center;
-        gap: .5rem;
-        width: 100%;
-        border-radius: .25rem;
-        transition: transform 0.5s;
-
-        & svg {
-            width: 1rem;
-        }
-
-        input[type="radio"] {
-            all: unset;
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            cursor: pointer;
-        }
-
-        input[type="radio"]:checked+label {
-            color: var(--text-heading);
-            font-weight: 500;
-
-        }
-
-        &:has(:checked) {
-            background-color: var(--shape-button);
-
-            & svg path {
-                fill: var(--brand-light);
-            }
-        }
-    }
-}
-
 .label-checkbox {
     margin-bottom: .5rem;
 }
 
-#colors {
-    display: flex;
-    flex-direction: column;
-
-    & .checkbox-colors {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    & input {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        margin: 0;
-        padding: 0;
-
-
-    }
-
-    input[type="checkbox"] {
-        display: none;
-    }
-
-    & input[type="checkbox"]:checked+.circle-color {
-        outline: 2px solid var(--brand-light);
-        outline-offset: 0.2px;
-    }
-
-    & .circle-color {
-        position: relative;
-        display: flex;
-        background-color: var(--shape-button);
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--shape-hover);
-        }
-    }
-
-    & .circle-color::before {
-        content: '';
-        display: block;
-        height: 24px;
-        width: 24px;
-        border-radius: 50%;
-        background-color: currentColor;
-
-    }
-
-    /* Paleta de cores */
-    .brand-light {
-        color: var(--brand-light);
-    }
-
-    .navy {
-        color: var(--navy);
-    }
-
-    .purple {
-        color: var(--purple);
-    }
-
-    .fuschia {
-        color: var(--fuschia);
-    }
-
-    .pink {
-        color: var(--pink);
-    }
-
-    .danger {
-        color: var(--danger);
-    }
-
-    .orange {
-        color: var(--orange);
-    }
-
-    .yellow {
-        color: var(--yellow);
-    }
-
-    .lime {
-        color: var(--lime);
-    }
-
-    .green {
-        color: var(--green);
-    }
-
-    .cyan {
-        color: var(--cyan);
-    }
-
-}
 
 #theme {
     position: relative;

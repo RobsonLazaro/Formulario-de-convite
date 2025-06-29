@@ -1,26 +1,36 @@
-#file-input{
-    position: absolute;
-    opacity: 0;
-    padding: 0;
-    margin: 0;
-    font: var(--body-md);
-    top: 0;
-
-}
-
-.input-file-wrapper{
-    position: relative;
-    margin-top: 1rem;
-}
-
-.cover-photo{
-    width: 119px;
+.input-file-wrapper {
     display: flex;
     align-items: center;
-    padding-inline: .75rem;
-    padding-block: .25rem;
-    gap: .5rem;
-    border-radius: .5rem;
+    gap: .75rem;
+    position: relative;
+    margin-top: .75rem;
+
+    & span {
+        color: var(--input-placeholder);
+
+    }
+}
+
+#upload-input {
+    all: unset;
+    color: var(--input-placeholder);
+}
+
+#upload-input::file-selector-button {
+    position: relative;
+    padding: .75rem .25rem;
+    border: 0;
     background-color: var(--shape-button);
+    border-radius: .5rem;
     font-weight: 500;
+    color: var(--text-heading);
+    background-image: url(../../assets/icons/upload.svg);
+    background-size: 1.25rem;
+    background-repeat: no-repeat;
+    background-position: 0.75rem center;
+    padding-left: 2.25rem
+}
+
+#upload-input::file-selector-button:hover {
+    background-color: var(--shape-hover);
 }
